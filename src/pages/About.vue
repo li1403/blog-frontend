@@ -50,5 +50,10 @@ export default {
     title: 'About us'
   },
   name: 'AboutPage',
+  computed: {
+    about() {
+      return this.$page.about.edges[0].node
+    }
+  }
 }
 </script>

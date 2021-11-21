@@ -92,6 +92,11 @@ export default {
       }
     }
   },
+  computed: {
+    cover() {
+      return this.$page.cover.edges[0].node
+    }
+  },
   methods: {
     async onSubmit () {
       try {

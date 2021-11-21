@@ -72,7 +72,12 @@ query ($id: ID!) {
 
 <script>
 export default {
-  name: 'TagPage'
+  name: 'TagPage',
+  computed: {
+    general() {
+      return this.$page.general.edges[0].node
+    }
+  }
 }
 </script>
 
