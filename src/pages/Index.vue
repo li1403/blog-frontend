@@ -38,7 +38,7 @@
               </h3> -->
             </g-link>
             <p class="post-meta">Posted by
-              <a href="#">{{ edge.node.created_by.firstname + edge.node.created_by.lastname}}</a>
+              <a href="#">{{ edge.node.create_by.username }}</a>
               on {{ edge.node.created_at }}</p>
             <p>
               <span v-for="tag in edge.node.tags" :key="tag.id">
@@ -110,10 +110,9 @@ query ($page: Int) {
       node {
         id
         title
-        created_by {
+        create_by {
           id
-          firstname
-          lastname
+          username
         }
         tags {
           id
