@@ -1,7 +1,9 @@
 <template>
   <Layout>
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('/uploads/contact-bg.jpg')">
+    <header class="masthead" :style="{
+        backgroundImage: `url(${'/uploads/' + cover.cover.url})`
+      }">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -61,6 +63,20 @@
     </div>
   </Layout>
 </template>
+
+<page-query>
+query {
+  cover: allStrapiContactCover {
+    edges {
+      node {
+        cover {
+          url
+        }
+      }
+    }
+  }
+}
+</page-query>
 
 <script>
 import axios from 'axios'

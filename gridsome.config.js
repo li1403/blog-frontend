@@ -21,7 +21,7 @@ module.exports = {
         queryLimit: 1000,
         contentTypes: ['post', 'tag'],
         typeName: 'Strapi',
-        singleTypes: ['general'],
+        singleTypes: ['general', 'contact-cover', 'about'],
         // loginData: {
         //   identifier: '',
         //   password: '',

@@ -1,7 +1,9 @@
 <template>
   <Layout>
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('/uploads/about-bg.jpg')">
+    <header class="masthead" :style="{
+        backgroundImage: `url(${'/uploads/' + about.cover.url})`
+      }">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -27,6 +29,20 @@
     </div>
   </Layout>
 </template>
+
+<page-query>
+query {
+  about: allStrapiAbout {
+    edges {
+      node {
+        cover {
+          url
+        }
+      }
+    }
+  }
+}
+</page-query>
 
 <script>
 export default {

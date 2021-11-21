@@ -1,7 +1,9 @@
 <template>
   <Layout>
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('/uploads/home-bg.jpg')">
+    <header class="masthead" :style="{
+        backgroundImage: `url(${'/uploads/' + general.cover.url})`
+      }">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -53,6 +55,16 @@ query ($id: ID!) {
     posts {
       id
       title
+    }
+  }
+
+  general: allStrapiGeneral {
+    edges {
+      node {
+        cover {
+          url
+        }
+      }
     }
   }
 }
