@@ -4,7 +4,7 @@
     <header 
       class="masthead" 
       :style="{
-        backgroundImage: `url(${'/upload/' + $page.post.cover.url})`
+        backgroundImage: `url(${'/uploads/' + $page.post.cover.url})`
       }"
     >
       <div class="overlay"></div>
